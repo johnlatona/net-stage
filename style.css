@@ -1,21 +1,42 @@
+.navbar {
+  background-color: black;
+  margin-bottom: 0;
+  border: none;
+  border-radius: 0px;
+}
+
+.nav-title {
+  color: Red;
+  font-family: 'Notable', sans-serif;
+  font-size: 30px;
+}
+
+#N-title {
+  transform: rotateZ(-180deg);
+}
+
+#E-title {
+  transform: rotateZ(180deg);
+}
+
 #osc-1 {
   background-color: #636362;
-  background-image: url("./images/brushed-alum-dark.png");
-  height: 300px;
+  background-image: url("./images/gun-metal.png");
+  height: 250px;
   position: relative;
 }
 
 #osc-2 {
   background-color: #828181;
-  background-image: url("./images/brushed-alum-dark.png");
-  height: 300px;
+  background-image: url("./images/gun-metal.png");
+  height: 250px;
   position: relative;
 }
 
 #osc-3 {
   background-color: #2B2B2B;
-  background-image: url("./images/brushed-alum-dark.png");
-  height: 300px;
+  background-image: url("./images/gun-metal.png");
+  height: 250px;
   position: relative;
 }
 
@@ -26,10 +47,59 @@
   padding-left: 0;
 }
 
-.oscillator-selector-label {
-  color: white;
-}
-
 #piano {
   padding: 0;
+}
+
+.oscillator-selector-label {
+  text-align: center;
+  text-shadow: .05em .05em .1em black;
+  font-family: 'Notable', sans-serif;
+  font-size: 20px;
+  color: #ABABAA;
+}
+
+.osc-label {
+  color: #ABABAA;
+  text-shadow: .05em .05em .1em black;
+}
+
+#filter, #reverb, #chorus, #eq {
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+#filter {
+  background-color: #C9C8C8;
+  background-image: url("./images/brushed-alum-dark.png");
+}
+
+#reverb {
+  background-color: #C9C8C8;
+  background-image: url("./images/brushed-alum-dark.png");
+}
+
+#chorus {
+  background-color: #C9C8C8;
+  background-image: url("./images/brushed-alum-dark.png");
+}
+
+#eq {
+  background-color: #C9C8C8;
+  background-image: url("./images/brushed-alum-dark.png");
+}
+
+#eq-slider {
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+.eq-labels {
+  margin-left: 20px;
+}
+
+#osc3-meter {
+  width: 50px;
+  height: 150px;
 }
