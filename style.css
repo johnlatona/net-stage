@@ -1,0 +1,35 @@
+#osc-1 {
+  background-color: #636362;
+  background-image: url("./images/brushed-alum-dark.png");
+  height: 300px;
+  position: relative;
+}
+
+#osc-2 {
+  background-color: #828181;
+  background-image: url("./images/brushed-alum-dark.png");
+  height: 300px;
+  position: relative;
+}
+
+#osc-3 {
+  background-color: #2B2B2B;
+  background-image: url("./images/brushed-alum-dark.png");
+  height: 300px;
+  position: relative;
+}
+
+#oscilloscope {
+  left: 0px;
+  top: 0px;
+  z-index: 3;
+  padding-left: 0;
+}
+
+.oscillator-selector-label {
+  color: white;
+}
+
+#piano {
+  padding: 0;
+}

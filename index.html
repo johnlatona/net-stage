@@ -5,11 +5,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Midi Demo</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css" />
   <script defer src='./tone.min.js'></script>
-  <script defer src='./midiDemo.js'></script>
+  <script defer src='./nexusUI.js'></script>
+  <script defer src='./synth.js'></script>
 </head>
 <body>
-  <h1>MIDI YAY</h1>
+  <div class='container-fluid'>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6" id="oscilloscope"></div>
+      <div class="col-xs-12 col-sm-6" id="piano"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4" id="osc-1">
+        <h2 class="oscillator-selector-label">Oscillator 1</h2>
+        <form class="form-inline">
+          <div class="form-group">
+            <label>Wave Type</label>
+            <select class="form-control osc-wavetype" id="osc1-wavetype">
+              <option value="--">--</option>
+              <option value="sine">Sine</option>
+              <option value="amsine">AMSine</option>
+              <option value="fmsine">FMSine</option>
+              <option value="fatsine">FatSine</option>
+              <option value="sawtooth">Sawtooth</option>
+              <option value="amsawtooth">AMSawtooth</option>
+              <option value="fmsawtooth">FMSawtooth</option>
+              <option value="fatsawtooth">FatSawtooth</option>
+              <option value="square">Square</option>
+              <option value="amsquare">AMSquare</option>
+              <option value="fmsquare">FMSquare</option>
+              <option value="fatsquare">FatSquare</option>
+              <option value="triangle">Triangle</option>
+              <option value="amtriangle">AMTriangle</option>
+              <option value="fmtriangle">FMTriangle</option>
+              <option value="fattriangle">FatTriangle</option>
+            </select>
+          </div>
+        </form>
+        <div id="osc1-volume"></div>
+      </div>
+      <div class="col-xs-12 col-sm-4" id="osc-2">
+        <h2 class="oscillator-selector-label">Oscillator 2</h2>
+        <form class="form-inline">
+          <div class="form-group">
+            <label>Wave Type</label>
+            <select class="form-control osc-wavetype" id="osc2-wavetype">
+              <option value="--">--</option>
+              <option value="sine">Sine</option>
+              <option value="amsine">AMSine</option>
+              <option value="fmsine">FMSine</option>
+              <option value="fatsine">FatSine</option>
+              <option value="sawtooth">Sawtooth</option>
+              <option value="amsawtooth">AMSawtooth</option>
+              <option value="fmsawtooth">FMSawtooth</option>
+              <option value="fatsawtooth">FatSawtooth</option>
+              <option value="square">Square</option>
+              <option value="amsquare">AMSquare</option>
+              <option value="fmsquare">FMSquare</option>
+              <option value="fatsquare">FatSquare</option>
+              <option value="triangle">Triangle</option>
+              <option value="amtriangle">AMTriangle</option>
+              <option value="fmtriangle">FMTriangle</option>
+              <option value="fattriangle">FatTriangle</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="col-xs-12 col-sm-4" id="osc-3">
+        <h2 class="oscillator-selector-label">Oscillator 3</h2>
+        <form class="form-inline">
+          <div class="form-group">
+            <label>Wave Type</label>
+            <select class="form-control osc-wavetype" id="osc2-wavetype">
+              <option value="--">--</option>
+              <option value="sine">Sine</option>
+              <option value="amsine">AMSine</option>
+              <option value="fmsine">FMSine</option>
+              <option value="fatsine">FatSine</option>
+              <option value="sawtooth">Sawtooth</option>
+              <option value="amsawtooth">AMSawtooth</option>
+              <option value="fmsawtooth">FMSawtooth</option>
+              <option value="fatsawtooth">FatSawtooth</option>
+              <option value="square">Square</option>
+              <option value="amsquare">AMSquare</option>
+              <option value="fmsquare">FMSquare</option>
+              <option value="fatsquare">FatSquare</option>
+              <option value="triangle">Triangle</option>
+              <option value="amtriangle">AMTriangle</option>
+              <option value="fmtriangle">FMTriangle</option>
+              <option value="fattriangle">FatTriangle</option>
+            </select>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>
