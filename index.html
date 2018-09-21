@@ -28,103 +28,117 @@
       <div class="col-xs-12 col-sm-6" id="piano"></div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-sm-4" id="osc-1">
-        <h3 class="oscillator-selector-label" id="osc-1-title">Oscillator A</h3>
-        <div class="row oscillator-row">
-          <form class="form-inline">
-            <div class="col-xs-4">
-              <div class="form-group">
-                <label class="osc-label effects-labels osc-label-1">WAVE FORM</label>
-                <select class="form-control osc-wavetype" id="osc1-wavetype">
-                  <option value="--">--</option>
-                  <option value="sine">Sine</option>
-                  <option value="amsine">AMSine</option>
-                  <option value="fmsine">FMSine</option>
-                  <option value="fatsine">FatSine</option>
-                  <option value="sawtooth">Sawtooth</option>
-                  <option value="amsawtooth">AMSawtooth</option>
-                  <option value="fmsawtooth">FMSawtooth</option>
-                  <option value="fatsawtooth">FatSawtooth</option>
-                  <option value="square">Square</option>
-                  <option value="amsquare">AMSquare</option>
-                  <option value="fmsquare">FMSquare</option>
-                  <option value="fatsquare">FatSquare</option>
-                  <option value="triangle">Triangle</option>
-                  <option value="amtriangle">AMTriangle</option>
-                  <option value="fmtriangle">FMTriangle</option>
-                  <option value="fattriangle">FatTriangle</option>
-                </select>
+        <div class="col-xs-12 col-sm-4" id="osc-1">
+            <h3 class="oscillator-selector-label" id="osc-1-title">Oscillator A</h3>
+            <div class="row oscillator-row">
+              <div class="col-xs-10">
+                <div class="row osc-top-row">
+                  <div class="col-xs-6">
+                    <form class="form-inline">
+                      <div class="form-group">
+                        <label class="osc-label effects-labels osc-label-1">WAVE FORM</label>
+                        <select class="form-control osc-wavetype" id="osc1-wavetype">
+                          <option value="--">--</option>
+                          <option value="sine">Sine</option>
+                          <option value="amsine">AMSine</option>
+                          <option value="fmsine">FMSine</option>
+                          <option value="fatsine">FatSine</option>
+                          <option value="sawtooth">Sawtooth</option>
+                          <option value="amsawtooth">AMSawtooth</option>
+                          <option value="fmsawtooth">FMSawtooth</option>
+                          <option value="fatsawtooth">FatSawtooth</option>
+                          <option value="square">Square</option>
+                          <option value="amsquare">AMSquare</option>
+                          <option value="fmsquare">FMSquare</option>
+                          <option value="fatsquare">FatSquare</option>
+                          <option value="triangle">Triangle</option>
+                          <option value="amtriangle">AMTriangle</option>
+                          <option value="fmtriangle">FMTriangle</option>
+                          <option value="fattriangle">FatTriangle</option>
+                        </select>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-xs-6">
+                    <label class="osc-label effects-labels pan osc-label-1">PAN</label>
+                    <div id="osc1-pan"></div>
+                  </div>
+                </div>
+                <div class="row osc-bottom-row">
+                  <div class="col-xs-6">
+                    <label class="osc-label effects-labels osc-label-1">VOLUME</label>
+                    <div id="osc1-volume"></div>
+                  </div>
+                  <div class="col-xs-6">
+                    <label class="osc-label effects-labels pan osc-label-1">DISTORTION</label>
+                    <div id="osc1-distortion"></div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </form>
-          <div class="col-xs-3">
-            <label class="osc-label effects-labels osc-label-1">VOLUME</label>
-            <div id="osc1-volume"></div>
+              <div class="col-xs-2">
+                <canvas id="osc-1-meter"></canvas>
+              </div>
+            </div>  <!--oscillator row-->
           </div>
-          <div class="col-xs-3">
-            <label class="osc-label effects-labels pan osc-label-1">PAN</label>
-            <div id="osc1-pan"></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-3">
-            <label class="osc-label effects-labels pan osc-label-1">DISTORTION</label>
-            <div id="osc1-distortion"></div>
-          </div>
-        </div>
-      </div>
       <div class="col-xs-12 col-sm-4" id="osc-2">
         <h3 class="oscillator-selector-label" id="osc-2-title">Oscillator B</h3>
         <div class="row oscillator-row">
-          <form class="form-inline">
-            <div class="col-xs-4">
-              <div class="form-group">
-                <label class="osc-label effects-labels osc-label-2">WAVE FORM</label>
-                <select class="form-control osc-wavetype" id="osc2-wavetype">
-                  <option value="--">--</option>
-                  <option value="sine">Sine</option>
-                  <option value="amsine">AMSine</option>
-                  <option value="fmsine">FMSine</option>
-                  <option value="fatsine">FatSine</option>
-                  <option value="sawtooth">Sawtooth</option>
-                  <option value="amsawtooth">AMSawtooth</option>
-                  <option value="fmsawtooth">FMSawtooth</option>
-                  <option value="fatsawtooth">FatSawtooth</option>
-                  <option value="square">Square</option>
-                  <option value="amsquare">AMSquare</option>
-                  <option value="fmsquare">FMSquare</option>
-                  <option value="fatsquare">FatSquare</option>
-                  <option value="triangle">Triangle</option>
-                  <option value="amtriangle">AMTriangle</option>
-                  <option value="fmtriangle">FMTriangle</option>
-                  <option value="fattriangle">FatTriangle</option>
-                </select>
+          <div class="col-xs-10">
+            <div class="row osc-top-row">
+              <div class="col-xs-6">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <label class="osc-label effects-labels osc-label-2">WAVE FORM</label>
+                    <select class="form-control osc-wavetype" id="osc2-wavetype">
+                      <option value="--">--</option>
+                      <option value="sine">Sine</option>
+                      <option value="amsine">AMSine</option>
+                      <option value="fmsine">FMSine</option>
+                      <option value="fatsine">FatSine</option>
+                      <option value="sawtooth">Sawtooth</option>
+                      <option value="amsawtooth">AMSawtooth</option>
+                      <option value="fmsawtooth">FMSawtooth</option>
+                      <option value="fatsawtooth">FatSawtooth</option>
+                      <option value="square">Square</option>
+                      <option value="amsquare">AMSquare</option>
+                      <option value="fmsquare">FMSquare</option>
+                      <option value="fatsquare">FatSquare</option>
+                      <option value="triangle">Triangle</option>
+                      <option value="amtriangle">AMTriangle</option>
+                      <option value="fmtriangle">FMTriangle</option>
+                      <option value="fattriangle">FatTriangle</option>
+                    </select>
+                  </div>
+                </form>
+              </div>
+              <div class="col-xs-6">
+                <label class="osc-label effects-labels pan osc-label-2">PAN</label>
+                <div id="osc2-pan"></div>
               </div>
             </div>
-          </form>
-          <div class="col-xs-3">
-            <label class="osc-label effects-labels osc-label-2">VOLUME</label>
-            <div id="osc2-volume"></div>
+            <div class="row osc-bottom-row">
+              <div class="col-xs-6">
+                <label class="osc-label effects-labels osc-label-2">VOLUME</label>
+                <div id="osc2-volume"></div>
+              </div>
+              <div class="col-xs-6">
+                <label class="osc-label effects-labels pan osc-label-2">DISTORTION</label>
+                <div id="osc2-distortion"></div>
+              </div>
+            </div>
           </div>
-          <div class="col-xs-3">
-            <label class="osc-label effects-labels pan osc-label-2">PAN</label>
-            <div id="osc2-pan"></div>
+          <div class="col-xs-2">
+            <canvas id="osc-2-meter"></canvas>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-3">
-            <label class="osc-label effects-labels pan osc-label-2">DISTORTION</label>
-            <div id="osc2-distortion"></div>
-          </div>
-        </div>
+        </div>  <!--oscillator row-->
       </div>
       <div class="col-xs-12 col-sm-4" id="osc-3">
         <h3 class="oscillator-selector-label" id="osc-3-title">Oscillator C</h3>
         <div class="row oscillator-row">
           <div class="col-xs-10">
-            <div class="row">
-              <form class="form-inline">
-                <div class="col-xs-6">
+            <div class="row osc-top-row">
+              <div class="col-xs-6">
+                <form class="form-inline">
                   <div class="form-group">
                     <label class="osc-label effects-labels osc-label-3">WAVE FORM</label>
                     <select class="form-control osc-wavetype" id="osc3-wavetype">
@@ -147,14 +161,14 @@
                       <option value="fattriangle">FatTriangle</option>
                     </select>
                   </div>
-                </div>
-              </form>
+                </form>
+              </div>
               <div class="col-xs-6">
                 <label class="osc-label effects-labels pan osc-label-3">PAN</label>
                 <div id="osc3-pan"></div>
               </div>
             </div>
-            <div class="row">
+            <div class="row osc-bottom-row">
               <div class="col-xs-6">
                 <label class="osc-label effects-labels osc-label-3">VOLUME</label>
                 <div id="osc3-volume"></div>
@@ -174,38 +188,60 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-sm-3" id="filter">
-        <h4 class="oscillator-selector-label" id="filter-title">Filter</h4>
-        <div id="frequency"></div>
-        <label class="osc-label effects-labels">FREQUENCY</label>
+      <div class="col-xs-12 col-sm-3 effect-modules" id="filter">
+        <h4 class="oscillator-selector-label effects-labels effects" id="filter-title">Filter</h4>
+        <div class="row">
+          <div class="col-xs-6">
+            <form class="form-inline">
+              <div class="form-group">
+                <label class="osc-label effects-labels effects">FILTER TYPE</label>
+                <select class="form-control filter-type" id="filter-type">
+                  <option value="--">--</option>
+                  <option value="lowpass">Low Pass</option>
+                  <option value="highpass">High Pass</option>
+                  <option value="bandpass">Band Pass</option>
+                  <option value="lowshelf">Low Shelf</option>
+                  <option value="highshelf">High Shelf</option>
+                  <option value="notch">Notch</option>
+                  <option value="allpass">All Pass</option>
+                  <option value="peaking">Peaking</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="col-xs-6">
+            <div id="frequency"></div>
+            <label class="osc-label effects-labels effects">FREQUENCY</label>
+          </div>
+        </div>
       </div>
-      <div class="col-xs-12 col-sm-3" id="reverb">
-        <h4 class="oscillator-selector-label" id="reverb-title">Reverb</h4>
+      <div class="col-xs-12 col-sm-3 effect-modules" id="reverb">
+        <h4 class="oscillator-selector-label effects-labels effects" id="reverb-title">Reverb</h4>
         <div id="reverb-decay"></div>
-        <label class="osc-label effects-labels">DECAY</label>
+        <label class="osc-label effects-labels effects">DECAY</label>
         <div id="reverb-wet-dry"></div>
-        <label class="osc-label effects-labels">DRY / WET</label>
+        <label class="osc-label effects-labels effects">DRY / WET</label>
       </div>
-      <div class="col-xs-12 col-sm-3" id="chorus">
-        <h4 class="oscillator-selector-label" id="chorus-title">CHORUS</h4>
+      <div class="col-xs-12 col-sm-3 effect-modules" id="chorus">
+        <h4 class="oscillator-selector-label effects-labels effects" id="chorus-title">CHORUS</h4>
         <div id="chorus-depth"></div>
-        <label class="osc-label effects-labels">DEPTH</label>
+        <label class="osc-label effects-labels effects">DEPTH</label>
         <div id="chorus-frequency"></div>
-        <label class="osc-label effects-labels">FREQUENCY</label>
+        <label class="osc-label effects-labels effects">FREQUENCY</label>
         <div id="chorus-wet-dry"></div>
-        <label class="osc-label effects-labels">WET / DRY</label>
+        <label class="osc-label effects-labels effects">WET / DRY</label>
       </div>
-      <div class="col-xs-12 col-sm-3" id="eq">
-        <h4 class="oscillator-selector-label" id="eq-title">EQ</h4>
+      <div class="col-xs-12 col-sm-3 effect-modules" id="eq">
+        <h4 class="oscillator-selector-label effects-labels effects" id="eq-title">EQ</h4>
         <div id="eq-slider"></div>
         <div class="col-xs-4">
-            <label class="osc-label eq-labels">Low</label>
+            <label class="osc-label eq-labels effects">Low</label>
         </div>
         <div class="col-xs-4">
-            <label class="osc-label eq-labels">Mid</label>
+            <label class="osc-label eq-labels effects">Mid</label>
         </div>
         <div class="col-xs-4">
-            <label class="osc-label eq-labels">High</label>
+            <label class="osc-label eq-labels effects">High</label>
         </div>
       </div>
     </div>

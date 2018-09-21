@@ -99,7 +99,11 @@
   margin-left: 20px;
 }
 
-#osc3-meter {
+#osc-1-meter, #osc-2-meter, #osc-3-meter {
   width: 50px;
   height: 150px;
+}
+
+.osc-bottom-row {
+  margin-top: 20px;
 }

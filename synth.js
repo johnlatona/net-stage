@@ -99,35 +99,35 @@ const volumeTwo = new Nexus.Dial("#osc2-volume", {
 })
 
 //Create db Meters in Oscillators
-const meterOne = document.getElementById('osc1-meter');
+const meterOne = document.getElementById('osc-1-meter');
 const meterOneContext = meterOne.getContext("2d");
 meterOneContext.translate(0, meterOne.height)
 meterOneContext.scale(1, -1)
 meterOneContext.fillStyle = "#C9C8C8"
-meterOneContext.fillRect(0,0,100,150);
+meterOneContext.fillRect(0,0,75,150);
 const barOne = meterOneContext.createLinearGradient(0,0,0,150);
 barOne.addColorStop(0, "#BFFF02")
 barOne.addColorStop(0.85, "#02FF24")
 barOne.addColorStop(1, "#FF0202")
 
-const meterTwo = document.getElementById('osc2-meter');
+const meterTwo = document.getElementById('osc-2-meter');
 const meterTwoContext = meterTwo.getContext("2d");
 meterTwoContext.translate(0, meterTwo.height)
 meterTwoContext.scale(1, -1)
 meterTwoContext.fillStyle = "#C9C8C8"
-meterTwoContext.fillRect(0,0,100,150);
+meterTwoContext.fillRect(0,0,75,150);
 const barTwo = meterTwoContext.createLinearGradient(0,0,0,150);
 barTwo.addColorStop(0, "#BFFF02")
 barTwo.addColorStop(0.85, "#02FF24")
 barTwo.addColorStop(1, "#FF0202")
 
 
-const meterThree = document.getElementById('osc3-meter');
+const meterThree = document.getElementById('osc-3-meter');
 const meterThreeContext = meterThree.getContext("2d");
 meterThreeContext.translate(0, meterThree.height)
 meterThreeContext.scale(1, -1)
 meterThreeContext.fillStyle = "#C9C8C8"
-meterThreeContext.fillRect(0,0,100,150);
+meterThreeContext.fillRect(0,0,75,150);
 const barThree = meterThreeContext.createLinearGradient(0,0,0,150);
 barThree.addColorStop(0, "#BFFF02")
 barThree.addColorStop(0.85, "#02FF24")
@@ -329,6 +329,14 @@ const reverb = new Tone.Reverb();
 const chorus = new Tone.Chorus();
 const eq = new Tone.EQ3();
 
+const filterTypeSelector = document.getElementById('filter-type');
+
+filterTypeSelector.addEventListener('change', function(event) {
+  console.log(event);
+  console.log(filter.type);
+  filter.type = event.target.value.toLowerCase();
+})
+
 for (let i = 0; i < oscSelectors.length; i++) {
   oscSelectors[i].addEventListener('change', function(event) {
     if (oscillators[i]) {
@@ -483,6 +491,32 @@ document.addEventListener("DOMContentLoaded", () => {
   .catch(console.error);
 });
 
+const checkOscillatorConnection = oscillators => {
+  const labels = document.getElementsByClassName('effects');
+  const modules = document.getElementsByClassName('effect-modules');
+  console.log(labels);
+  let allDisconnected = true;
+  for(let i = 0; i < oscillators.length; i++) {
+    if (oscillators[i].instrument.volume.mute === false) {
+      allDisconnected = false;
+      for (let j = 0; j < labels.length - 1; i++) {
+        labels[i].style.color = "#EA3323"
+        let j = i;
+        if (j < 4) {
+          modules[j].style.border = "1px solid white";
+        }
+      }
+    }
+  }
+  for (let i = 0; i < labels.length; i++) {
+    labels[i].style.color = "#ABABAA"
+    let j = i;
+    if (j < 4) {
+      modules[j].style.border =  "1px solid black";
+    }
+  }
+}
+
 function midiMapper({zone, input, value}) {
   if(zone === 144 || zone === 128) {
     if (input >= 36 || input <= 99) {
@@ -568,7 +602,7 @@ function midiMapper({zone, input, value}) {
               volumeOne.colorize("accent", "#E8E00C");
               panOne.colorize("accent", "#E8E00C");
               distortionOne.colorize("accent", "#E8E00C");
-              let labels = document.getElementsByClassName('osc-label-1');
+              let labels = document.getElementsByClassName('effects');
               for (let i = 0; i < labels.length; i++) {
                 const label = labels[i];
                 label.style.color = "#E8E00C"
@@ -581,12 +615,13 @@ function midiMapper({zone, input, value}) {
               volumeOne.colorize("accent", "#ABABAA");
               panOne.colorize("accent", "#ABABAA");
               distortionOne.colorize("accent", "#ABABAA");
-              let labels = document.getElementsByClassName('osc-label-1');
+              let labels = document.getElementsByClassName('effects');
               for (let i = 0; i < labels.length; i++) {
                 const label = labels[i];
                 label.style.color = "#ABABAA"
               }
             }
+            checkOscillatorConnection(oscillators);
             break;
           case 52:
             if (value === 127) {
@@ -596,7 +631,7 @@ function midiMapper({zone, input, value}) {
               volumeTwo.colorize("accent", "#03C0E8");
               panTwo.colorize("accent", "#03C0E8");
               distortionTwo.colorize("accent", "#03C0E8");
-              let labels = document.getElementsByClassName('osc-label-2');
+              let labels = document.getElementsByClassName('effects');
               for (let i = 0; i < labels.length; i++) {
                 const label = labels[i];
                 label.style.color = "#03C0E8"
@@ -609,12 +644,13 @@ function midiMapper({zone, input, value}) {
               volumeTwo.colorize("accent", "#ABABAA");
               panTwo.colorize("accent", "#ABABAA");
               distortionTwo.colorize("accent", "#ABABAA");
-              let labels = document.getElementsByClassName('osc-label-2');
+              let labels = document.getElementsByClassName('effects');
               for (let i = 0; i < labels.length; i++) {
                 const label = labels[i];
                 label.style.color = "#ABABAA"
               }
             }
+            checkOscillatorConnection(oscillators);
             break;
           case 53:
             if (value === 127) {
@@ -624,7 +660,7 @@ function midiMapper({zone, input, value}) {
               volumeThree.colorize("accent", "#FF7200");
               panThree.colorize("accent", "#FF7200");
               distortionThree.colorize("accent", "#FF7200");
-              let labels = document.getElementsByClassName('osc-label-3');
+              let labels = document.getElementsByClassName('effects');
               for (let i = 0; i < labels.length; i++) {
                 const label = labels[i];
                 label.style.color = "#FF7200"
@@ -637,12 +673,13 @@ function midiMapper({zone, input, value}) {
               volumeThree.colorize("accent", "#ABABAA");
               panThree.colorize("accent", "#ABABAA");
               distortionThree.colorize("accent", "#ABABAA");
-              let labels = document.getElementsByClassName('osc-label-3');
+              let labels = document.getElementsByClassName('effects');
               for (let i = 0; i < labels.length; i++) {
                 const label = labels[i];
                 label.style.color = "#ABABAA"
               }
             }
+            checkOscillatorConnection(oscillators);
             break;
           case 64:
             inst.instrument.handleSustain(value);
