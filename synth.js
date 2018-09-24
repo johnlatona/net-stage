@@ -180,6 +180,16 @@ const reverbWetDry = new Nexus.Dial("#reverb-wet-dry", {
   'value': 0
 })
 
+const reverbPreDelay = new Nexus.Dial("#reverb-predelay", {
+  'size': [50, 50],
+  'interaction': 'radial',
+  'mode': 'relative',
+  'min': 0,
+  'max': 1,
+  'step': 0.00787402,
+  'value': 0
+})
+
 const eqSlider = new Nexus.Multislider('#eq-slider', {
   'size': [300,175],
   'numberOfSliders': 3,
@@ -269,7 +279,7 @@ reverbWetDry.on("change", event => {
 })
 
 //style elements
-const effectsKnobs = [filterFrequency, reverbDecay, reverbWetDry, chorusWetDry, eqSlider, chorusPosition];
+const effectsKnobs = [filterFrequency, reverbDecay, reverbWetDry, reverbPreDelay, chorusWetDry, eqSlider, chorusPosition];
 
 const oscillatorKnobs = [volumeOne, volumeTwo, volumeThree, panOne, panTwo, panThree, distortionOne, distortionTwo, distortionThree];
 
@@ -414,7 +424,7 @@ for (let i = 0; i < oscSelectors.length; i++) {
 
     reverb.generate()
     .then(() => {
-      console.log(reverb.decay);
+      console.log(reverb);
       volumeKnobs[i].on('change', event => {
         const value = event * 127;
         oscillators[i].instrument.handleVolume(value);
@@ -459,14 +469,20 @@ handleFrequency = value => {
 }
 
 handleReverbDecay= value => {
-  const val = value / 127 * 100;
+  const val = value / 127 * 10;
   reverb.decay = val;
-  console.log(reverb);
+  reverb.generate();
 }
 
 handleReverbWetDry = value => {
   const val = value / 127 * 1;
   reverb.wet.value = val;
+}
+
+handleReverbPreDelay = value => {
+  const val = value / 1270 * 5;
+  reverb.preDelay = val;
+  reverb.generate()
 }
 
 handleChorusDepth = value => {
@@ -701,6 +717,10 @@ function midiMapper({zone, input, value}) {
           case 25:
             handleFrequency(value);
             filterFrequency.value = value / 127;
+            break;
+          case 26:
+            handleReverbPreDelay(value);
+            reverbPreDelay.value = value / 127;
             break;
           case 28:
             handleChorusWet(value);
