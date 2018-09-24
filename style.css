@@ -130,3 +130,17 @@ body {
 #filter-form {
   margin-left: 20px;
 }
+
+.reverb-dials {
+  margin-left: 50px;
+  margin-top: 12px;
+}
+
+.reverb-dials-labels {
+  margin-left: 50px;
+}
+
+#filter-row {
+  margin-top: 20px;
+  margin-left: 15px;
+}
