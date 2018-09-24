@@ -729,14 +729,45 @@ function midiMapper({zone, input, value}) {
           case 41:
             oscillators[0].instrument.handleVolume(value);
             volumeOne.value = value / 127;
+            document.getElementById('osc-1-title').style.color = "#E8E00C";
+            document.getElementById('osc-1').style.border= "1px solid #E8E00C";
+            volumeOne.colorize("accent", "#E8E00C");
+            panOne.colorize("accent", "#E8E00C");
+            distortionOne.colorize("accent", "#E8E00C");
+
+            let oscLabelsA = document.getElementsByClassName('osc-label-a');
+            for (let i = 0; i < oscLabelsA.length; i++) {
+              const label = oscLabelsA[i];
+              label.style.color = "#E8E00C"
+            }
             break;
           case 42:
             oscillators[1].instrument.handleVolume(value);
             volumeTwo.value = value / 127;
+            document.getElementById('osc-2-title').style.color = "#03C0E8";
+            document.getElementById('osc-2').style.border= "1px solid #03C0E8";
+            volumeTwo.colorize("accent", "#03C0E8");
+            panTwo.colorize("accent", "#03C0E8");
+            distortionTwo.colorize("accent", "#03C0E8");
+            let oscLabelsB = document.getElementsByClassName('osc-label-b');
+            for (let i = 0; i < oscLabelsB.length; i++) {
+              const label = oscLabelsB[i];
+              label.style.color = "#03C0E8"
+            }
             break;
           case 43:
             oscillators[2].instrument.handleVolume(value);
             volumeThree.value = value / 127;
+            document.getElementById('osc-3-title').style.color = "#FF7200";
+            document.getElementById('osc-3').style.border= "1px solid #FF7200";
+            volumeThree.colorize("accent", "#FF7200");
+            panThree.colorize("accent", "#FF7200");
+            distortionThree.colorize("accent", "#FF7200");
+            let oscLabelsC = document.getElementsByClassName('osc-label-c');
+            for (let i = 0; i < oscLabelsC.length; i++) {
+              const label = oscLabelsC[i];
+              label.style.color = "#FF7200"
+            }
             break;
           case 46:
             handleEqLow(value);
@@ -759,9 +790,9 @@ function midiMapper({zone, input, value}) {
               panOne.colorize("accent", "#E8E00C");
               distortionOne.colorize("accent", "#E8E00C");
 
-              let oscLabels = document.getElementsByClassName('osc-label-a');
-              for (let i = 0; i < oscLabels.length; i++) {
-                const label = oscLabels[i];
+              let oscLabelsMute = document.getElementsByClassName('osc-label-a');
+              for (let i = 0; i < oscLabelsMute.length; i++) {
+                const label = oscLabelsMute[i];
                 label.style.color = "#E8E00C"
               }
             }
@@ -772,9 +803,9 @@ function midiMapper({zone, input, value}) {
               volumeOne.colorize("accent", "#ABABAA");
               panOne.colorize("accent", "#ABABAA");
               distortionOne.colorize("accent", "#ABABAA");
-              let oscLabels = document.getElementsByClassName('osc-label-a');
-              for (let i = 0; i < oscLabels.length; i++) {
-                const label = oscLabels[i];
+              let oscLabelsMute = document.getElementsByClassName('osc-label-a');
+              for (let i = 0; i < oscLabelsMute.length; i++) {
+                const label = oscLabelsMute[i];
                 label.style.color = "#ABABAA"
               }
             }
@@ -787,9 +818,9 @@ function midiMapper({zone, input, value}) {
               volumeTwo.colorize("accent", "#03C0E8");
               panTwo.colorize("accent", "#03C0E8");
               distortionTwo.colorize("accent", "#03C0E8");
-              let oscLabels = document.getElementsByClassName('osc-label-b');
-              for (let i = 0; i < oscLabels.length; i++) {
-                const label = oscLabels[i];
+              let oscLabelsMute = document.getElementsByClassName('osc-label-b');
+              for (let i = 0; i < oscLabelsMute.length; i++) {
+                const label = oscLabelsMute[i];
                 label.style.color = "#03C0E8"
               }
             }
@@ -800,9 +831,9 @@ function midiMapper({zone, input, value}) {
               volumeTwo.colorize("accent", "#ABABAA");
               panTwo.colorize("accent", "#ABABAA");
               distortionTwo.colorize("accent", "#ABABAA");
-              let oscLabels = document.getElementsByClassName('osc-label-b');
-              for (let i = 0; i < oscLabels.length; i++) {
-                const label = oscLabels[i];
+              let oscLabelsMute = document.getElementsByClassName('osc-label-b');
+              for (let i = 0; i < oscLabelsMute.length; i++) {
+                const label = oscLabelsMute[i];
                 label.style.color = "#ABABAA"
               }
             }
@@ -815,9 +846,9 @@ function midiMapper({zone, input, value}) {
               volumeThree.colorize("accent", "#FF7200");
               panThree.colorize("accent", "#FF7200");
               distortionThree.colorize("accent", "#FF7200");
-              let oscLabels = document.getElementsByClassName('osc-label-c');
-              for (let i = 0; i < oscLabels.length; i++) {
-                const label = oscLabels[i];
+              let oscLabelsMute = document.getElementsByClassName('osc-label-c');
+              for (let i = 0; i < oscLabelsMute.length; i++) {
+                const label = oscLabelsMute[i];
                 label.style.color = "#FF7200"
               }
             }
@@ -828,9 +859,9 @@ function midiMapper({zone, input, value}) {
               volumeThree.colorize("accent", "#ABABAA");
               panThree.colorize("accent", "#ABABAA");
               distortionThree.colorize("accent", "#ABABAA");
-              let oscLabels = document.getElementsByClassName('osc-label-c');
-              for (let i = 0; i < oscLabels.length; i++) {
-                const label = oscLabels[i];
+              let oscLabelsMute = document.getElementsByClassName('osc-label-c');
+              for (let i = 0; i < oscLabelsMute.length; i++) {
+                const label = oscLabelsMute[i];
                 label.style.color = "#ABABAA"
               }
             }
