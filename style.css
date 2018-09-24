@@ -59,9 +59,10 @@
   color: #ABABAA;
 }
 
-.osc-label {
+.osc-label-a, .osc-label-b, .osc-label-c {
   color: #ABABAA;
   text-shadow: .05em .05em .1em black;
+  font-size: 12px;
 }
 
 #filter, #reverb, #chorus, #eq {
@@ -106,4 +107,17 @@
 
 .osc-bottom-row {
   margin-top: 20px;
+}
+
+.effects-title {
+  color: #EA3323;
+}
+
+.effects-labels {
+  color: white;
+  font-size: 12px;
+}
+
+#filter-form {
+  margin-left: 20px;
 }
