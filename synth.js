@@ -345,7 +345,6 @@ class Oscillator {
 
   handleVolume(value) {
     let val = (value - 100) / 1.95;
-    console.log(val);
     this.volume.volume.value = val;
   }
 
@@ -354,7 +353,6 @@ class Oscillator {
       this.sustained = true;
     }
     else this.sustained = false;
-    console.log(this.sustained);
   }
 
   handlePan(value) {
@@ -407,8 +405,6 @@ const eq = new Tone.EQ3(-18.7178487, -18.7178487, -18.7178487);
 const filterTypeSelector = document.getElementById('filter-type');
 
 filterTypeSelector.addEventListener('change', function(event) {
-  console.log(event);
-  console.log(filter.type);
   filter.type = event.target.value.toLowerCase();
 })
 
@@ -424,7 +420,6 @@ for (let i = 0; i < oscSelectors.length; i++) {
 
     reverb.generate()
     .then(() => {
-      console.log(reverb);
       volumeKnobs[i].on('change', event => {
         const value = event * 127;
         oscillators[i].instrument.handleVolume(value);
@@ -454,17 +449,12 @@ for (let i = 0; i < oscSelectors.length; i++) {
       eq.toMaster();
     });
 
-    oscilloscope.on('change', function(v) {
-      console.log(v);
-    });
-
     oscilloscope.connect(Tone.Master)
   })
 }
 
 handleFrequency = value => {
   const val = value / 127 * 14800 + 200;
-  console.log('frequency', val);
   filter.frequency.value = val;
 }
 
@@ -487,13 +477,11 @@ handleReverbPreDelay = value => {
 
 handleChorusDepth = value => {
   const val = value / 127;
-  console.log('depth', val);
   chorus.depth.value = val;
 }
 
 handleChorusFrequency = value => {
   const val = value / 127 * 5;
-  console.log('freqChorus', val);
   chorus.frequency.value = val;
 }
 
@@ -504,7 +492,6 @@ handleChorusWet = value => {
 
 handleEqLow = value => {
   const val = (value - 100) / 1.95;
-  console.log(val);
   eq.low.value = val;
 }
 
@@ -592,7 +579,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
     else {
-      console.log(oscillators[0]);
       oscillators[0].instrument.volume.mute = false;
       document.getElementById('osc-1-title').style.color = "#E8E00C";
       document.getElementById('osc-1').style.border= "1px solid #E8E00C";
@@ -611,7 +597,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   osc2Select.addEventListener("change", event => {
     if (event.target.value === '--') {
-      console.log('if');
       oscillators[1].instrument.volume.mute = true;
       document.getElementById('osc-2-title').style.color = "#ABABAA";
       document.getElementById('osc-2').style.border= "none";
@@ -642,7 +627,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const osc3Select = document.getElementById("osc3-wavetype");
   osc3Select.addEventListener("change", event => {
     if (event.target.value === '--') {
-      console.log('if');
       oscillators[2].instrument.volume.mute = true;
       document.getElementById('osc-3-title').style.color = "#ABABAA";
       document.getElementById('osc-3').style.border= "none";
@@ -874,7 +858,6 @@ function midiMapper({zone, input, value}) {
 
     }
   }
-  console.log('midiMapper', zone, input, value)
 }
 
 
